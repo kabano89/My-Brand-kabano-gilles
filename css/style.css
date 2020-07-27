@@ -34,6 +34,21 @@ img{
     width: 100%;
     position: fixed;
     top: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.menu #logo{
+    color: white;
+    padding-left: 50px;
+    font-size: 36px;
+}
+
+.menu #logo a{
+    color: white;
+    text-decoration: none;
 }
 
 .menu ul {
@@ -222,7 +237,7 @@ img{
 .contact input, textarea {
     width: 90%;
     padding: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
@@ -302,59 +317,257 @@ textarea {
 
 
 /* Ipad pro */
+/*
 @media all and (device-width: 1024px) and (device-height: 1366px) and (orientation:portrait) {
+
+    .wrapper {
+
+        grid-template-areas: 
+       "menu"
+       "main"
+       "services"
+       "skills"
+       "contact"
+       "footer";
+    }
+    
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "logo"
+        "menu-nav";
+    }
+
+    .menu #logo{
+        grid-area: logo;
+       
+    }
+
+    .menu #menu-nav {
+        grid-area: menu-nav;
+
+        display: grid;
+        grid-template-columns: 0.3fr;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "profile"
+        "description";
+    }
+
+    .main #profile img {
+          width: 50%;
+          height: 50%;
+    }
+    
+    .services {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    
+    
+}
+*/
+
+@media only screen and (max-width: 550px){
+    .wrapper{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+       "menu"
+       "main"
+       "services"
+       "skills"
+       "contact"
+       "footer";
+
+    }
+
+    img{
+        width: 100%;
+    }
+
+    /* Menu */
+    .menu {
+        grid-area: menu;
+        
+        background-color: #007BFF;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "logo"
+                            "menu-nav";
+
+        height: 90px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+    }
+
+    .menu #logo{
+        grid-area: logo;
+    }
+
+    .menu #menu-nav{
+        grid-area: menu-nav;
+    }
+
+    .menu ul {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+        
+    /* Main */
+    .main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "profile"
+                             "description";
+    }
+
+    .main #profile{
+        grid-area: profile;
+    }
+
+    .main #description{
+        grid-area: description;
+        text-align: center;
+    }
+
+    
+    /* Services */
+    .services{
+        grid-area: services;
+        
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "services-description"
+        "content1"
+        "content2"
+        "content3";
+        
+        
+    }
     
     .services #services-description {
-         margin-left: 360px;
+        grid-area: services-description;
+        text-align: center;
+    }
+    
+    
+    .services #content1 {
+        grid-area: content1;
+        text-align: center;
+        width: 390px;
+        border: 2px solid #BFBCBC;
+        margin-bottom: 20px;
+       
+        
+    }
+    
+    .services #content2 {
+        grid-area: content2;
+        text-align: center;
+        width: 390px;
+        border: 2px solid #BFBCBC;
+        margin-bottom: 20px;
+    }
+    
+    .services #content3 {
+        grid-area: content3;
+        text-align: center;
+        width: 390px;
+        border: 2px solid #BFBCBC;
+       
+    }
+
+    .services img{
+        width: 250px;
+        height: 200px;
+        padding-top: 10px;
+    }
+    
+    /* skills */
+    .skills{
+        grid-area: skills;
+        
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "skills-description"
+        "skills1"
+        "skills2"
+        "skills3";
         
     }
 
-    .services #content1{
-       margin-left: 280px;
-    }
-
-    .services #content2{
-        margin-left: 280px;
-    }
-
-    .services #content3{
-        margin-left: 280px;
+     
+    .skills #skills-description {
+        grid-area: skills-description;
+        text-align: center;
     }
     
-    .skills{
-        grid-template-areas: 
-        "skills-description"
-        "skills1 skills2"  
-        "skills3";
-        grid-gap: 20px;
+    
+    .skills #skills1 {
+        grid-area: skills1;
+        text-align: center;
+        width: 350px;
+        border: 2px solid #BFBCBC;
+        margin-bottom: 20px;
+    }
+    
+    .skills #skills2 {
+        grid-area: skills2;
+        text-align: center;
+        width: 350px;
+        border: 2px solid #BFBCBC;
+        margin-bottom: 20px;
+    }
+    
+    .skills #skills3 {
+        grid-area: skills3;
+        text-align: center;
+        width: 350px;
+        border: 2px solid #BFBCBC;
+       
     }
 
-    .skills #skills-description {
-        margin-left: 360px;
-       
-   }
-
-   .skills #skills1{
-      margin-left: 280px;
-   }
-
-   .skills #skills2{
-       margin-left: 280px;
-   }
-
-   .skills #skills3{
-       margin-left: 280px;
-   }
+    .skills img{
+        width: 240px;
+        height: 300px;
+    }
 
     .contact {
-        grid-template-areas: 
-        "form"
+        grid-area: contact;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-area: "form"
         "address";
     }
-   
+
+    .contact #form {
+        grid-area: form;
+    }
+
+    .contact #address {
+        grid-area: address;
+        margin-top: 400px;
+    }
+
+    
 }
-
-
-
-
-
