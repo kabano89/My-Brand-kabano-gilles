@@ -23,11 +23,10 @@ ul {
 .main-nav {
     display: flex;
     background-color: #007BFF;
-    /*
-    height: 70px;
+    
+    height: 60px;
     width: 100%;
     position: fixed;
-    */
     
 }
 
@@ -74,40 +73,36 @@ ul {
 }
 
 
-.profession{
-    grid-area: main;
-    background-color: #007BFF;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-
-    padding-top: 200px;
-    padding-bottom: 100px;
-}
 
 
-
-.profession .profile-description {
-    color: white;
+.profession {
+    width: 100%;
+    height: 100vh;
+    background: url('/img/profile2.png') no-repeat center center/cover;
+    background-size: 78%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-end;
+    padding-bottom: 200px;
+    margin-bottom: 20px;
     padding-top: 100px;
+    background-color: #007BFF;
+    color: #fff;
 }
-
 
 
 
 .services {
     background-color: #F8F9FA;
-    
-    /*height: 100vh;*/
-   
 }
 
 
 .services #description h1 {
     text-align: center;
-    /*
-    margin-bottom: 70px;
-    padding-top: 70px; */
+    margin-bottom: 50px;
+    
 }
 
 
@@ -115,8 +110,8 @@ ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .services .services-content h3 {
@@ -138,7 +133,7 @@ ul {
 .skills {
    
     background-color: #F8F9FA;
-    /*height: 100vh;*/
+   
 }
 
 
@@ -238,7 +233,7 @@ textarea {
 
 .footer .footer-social {
     display: flex;
-    margin-left: 600px;
+    margin-left: 700px;
 }
 
 .footer .footer-social li {
@@ -256,6 +251,7 @@ textarea {
 
     .menu-btn {
         display: block;
+        position: fixed; /*now*/
     }
 
     .menu-btn:hover {
@@ -270,7 +266,7 @@ textarea {
     
     .main-nav ul{
         display: block;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         background: #f2f2f2;
@@ -303,25 +299,11 @@ textarea {
         border-bottom: 0;
     }
 
-    
-    
 
-    .container .profession {
-        
-        grid-template-columns: 1fr;
-      
-        /*padding-top: 150px;*/
+    .profession {
+        background-size: 200%;
     }
-
-    .container .profile-description {
-        margin-top: -100px;
-               
-       text-align: center;
-    }
-
-
-
-
+   
 
     .services .services-content {
 
@@ -333,13 +315,7 @@ textarea {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .contact input, textarea {
-        width: 70%;
-    }
-
-    .contact #address {
-        margin-right: 20%;
-    }
+   
     
 
     .footer {
@@ -386,12 +362,18 @@ textarea {
         margin-right: auto;
     }
 
-    .contact input, textarea {
-        width: 70%;
+    
+
+    .contact {
+        display: grid;
+    }
+
+    .contact #contact-form h1{
+       text-align: center;
     }
 
     .contact #address {
-        margin-right: 20%;
+        margin-left: 20px;
     }
 
 }
