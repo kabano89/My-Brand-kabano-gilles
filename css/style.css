@@ -410,18 +410,29 @@ textarea {
         grid-template-columns: repeat(2, 1fr);
     }
   
+
     .skills .skills-content {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .footer .footer-nav {
-      
-        margin-left: 30%;
-        margin-bottom: 10px; 
+    .footer {
+        display: block;
     }
 
-    .footer .footer-social {
+    .footer .footer-nav {
+        
         margin-left: 30%;
+        margin-bottom: 10px; 
+       
+    }
+
+   
+
+
+    .footer .footer-social {
+        
+        margin-left: 30%;
+       
     }
 
 
@@ -443,6 +454,7 @@ textarea {
     
 }
 
+/* .....................End of Ipad Pro........................... */
 @media(max-width: 500px) {
 
     div > p {
@@ -485,6 +497,6 @@ textarea {
     .contact #address {
         margin-left: 20px;
     }
-  
+
 }
 
