@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+    <title>List of Articles</title>
+    <style>
+        #heading {
+            display: grid;
+            grid-template-columns: 0.2fr 0.2fr 0fr 0fr;
+            grid-gap: 10px;
+            
+        }
+                 
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div>
+            <p id="user_para">Hello</p>
+            <p><a href="#" id="logout">Logout</a></p>
+        </div>
+        <div>
+            <h3><a href="/html/createArticle.html" target="_blank">Create Article</a></h3>
+            <h3><a href="#">Profile</a></h3>
+        </div>
+
+        <div id="content">
+            <div id="heading">
+                <div>#</div>
+                <div>Title</div>
+                <div>Action</div>
+            </div>
+
+            <div id="data">
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyAzB0xFc3J_JexCDPT4IhvIE7mk1mTSNCI",
+          authDomain: "blog-6e704.firebaseapp.com",
+          databaseURL: "https://blog-6e704.firebaseio.com",
+          projectId: "blog-6e704",
+          storageBucket: "blog-6e704.appspot.com",
+          messagingSenderId: "291237750331",
+          appId: "1:291237750331:web:a9854a771694c964d79e1e",
+          measurementId: "G-NT5XTB43ZB"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        //firebase.analytics();
+        const db = firebase.firestore();
+        //db.settings({timestampsInSnapshots: true});
+    </script>
+
+    <script src="../js/articlesList.js"></script>
+    
+</body>
+</html>
