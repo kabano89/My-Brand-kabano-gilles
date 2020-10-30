@@ -1,102 +1,110 @@
-const form = document.getElementById('update-articles-form');
+//var email_id = localStorage.getItem("myValue");
 
-var ids = localStorage.getItem("myValue");
-// // alert("the value received is" + b);
- var resetValue = 0;
- localStorage.setItem("myValue", resetValue);
+var email_id = localStorage.getItem('emailValue');
 
-function renderArticle(doc){ //the argument doc is the document that we want to render
+if(!email_id){
+    window.location.href = "login.html";
 
-     document.getElementById("title").value = doc.data().title;
+}else{
 
-     document.getElementById("content").value = doc.data().content;
-
-    const image = document.querySelector('#image');
-    image.src = doc.data().image;
-
-}
+    document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
 
 
-//retrieve data
+    const form = document.getElementById('update-articles-form');
 
- db.collection('articles').where('__name__', '==', ids).get().then((snapshot) => {
+    var ids = localStorage.getItem("myValue");
 
-         snapshot.docs.forEach(doc => {
-            //console.log(doc.data());//data() to view it well
-
-            renderArticle(doc); //call the function
-         });
- })
+    // var resetValue = 0;
+    // localStorage.setItem("myValue", resetValue);
 
 
 
- function uploadImage(){
-    const ref = firebase.storage().ref()
+    var imageOldUrl = "";  //will catch the old url
 
-    const file = document.querySelector("#photo").files[0]
+    function renderArticle(doc){ //the argument doc is the document that we want to render
 
-    const name = new Date() + '-' + file.name
+        document.getElementById("title").value = doc.data().title;
 
-    const metadata = {
-        contentType:file.type
+        document.getElementById("content").value = doc.data().content;
+
+        const image = document.querySelector('#image');
+        image.src = doc.data().image;
+        imageOldUrl = doc.data().image;
+
     }
-    
-    const task = ref.child(name).put(file,metadata)
-    
-    task
-    .then(snapshot => snapshot.ref.getDownloadURL())
-    .then(url =>  {
-          const image = document.querySelector('#image');
-          image.src = url;
-          return(url);   
+
+
+    //retrieve data
+    db.collection('articles').where('__name__', '==', ids).get().then((snapshot) => {
+
+            snapshot.docs.forEach(doc => {
+                renderArticle(doc); //call the function
+            });
     })
 
-}
-
-function uploadImageToFirebase(){
-     return new Promise(
-      function(resolve,reject){
-         const ref = firebase.storage().ref()
- 
-         const file = document.querySelector("#photo").files[0]
-     
-         const name = new Date() + '-' + file.name
-     
-         const metadata = {
-             contentType:file.type
-         }
-         
-         const task = ref.child(name).put(file,metadata)
-         
-         task
-         .then(snapshot => snapshot.ref.getDownloadURL())
-         .then(url =>  {
-               resolve(url);   
-         })
-      }
-    )
-}
 
 
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
 
-    var imageUrl = await uploadImageToFirebase();
-    console.log(imageUrl);
 
+    function uploadImageToFirebase(){
+        return new Promise(
+        function(resolve,reject){
+            const ref = firebase.storage().ref()
     
-    // uploadImageToFirebase.then(value => {
-    //      console.log(value);
-    //  })
+            const file = document.querySelector("#photo").files[0]
 
-    db.collection('articles').doc(ids).update({
-        title: form.title.value,
-        image: imageUrl,
-        content: form.content.value
+            if (typeof (file) !== "undefined"){
+        
+                const name = new Date() + '-' + file.name
+            
+                const metadata = {
+                    contentType:file.type
+                }
+                
+                const task = ref.child(name).put(file,metadata)
+                
+                task
+                .then(snapshot => snapshot.ref.getDownloadURL())
+                .then(url =>  {
+                    const image = document.querySelector('#image');
+                    image.src = url;
+                    resolve(url);   
+                })
+            }else{
+                url = imageOldUrl;
+                resolve(url);
+            }
+        }
+        )
+    }
+
+
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        var imageUrl = await uploadImageToFirebase();
+
+        db.collection('articles').doc(ids).update({
+            title: form.title.value,
+            image: imageUrl,
+            content: form.content.value
+        })
+        form.title.value = '';
+        form.image.value = '';
+        form.content.value = '';  
     })
-    form.title.value = '';
-    form.image.value = '';
-    form.content.value = '';    
+}
 
-})
+document.getElementById("logout").onclick = function(){
+    
+    logout();
+    window.location.href = "login.html";  
+    
+}
+
+function logout(){
+    firebase.auth().signOut();
+    localStorage.clear();
+}
 

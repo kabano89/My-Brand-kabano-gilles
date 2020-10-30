@@ -24,7 +24,7 @@ ul {
     background-color: #007BFF;
     height: 60px;
     width: 100%;
-    position: fixed; 
+    position: fixed;
 }
 
 /* Logo */
@@ -69,19 +69,13 @@ ul {
     display: none;
 }
 
-
 /* content */
 #content {
    background-color: #ffffff;
    margin: 0 auto;
    width: 60%;
    padding-top: 80px;
-   
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   grid-template-rows: auto;
-   grid-gap: 20px;
-   height: fit-content;
+   /* height: fit-content; not working */
 }
 
 #content > div {
@@ -90,10 +84,76 @@ ul {
     padding: 10px;
 }
 
-#content > div:hover {
-    
-    border: 3px solid #d0d0d0;
+#content > div p {
+    text-align: justify;
 }
+
+
+/* comments */
+#display-comments {
+    margin: 0 auto;
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+#display-comments > div {
+    border: 1px solid gray;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+/* form comments */
+#form-comment h3{
+    margin-bottom: 30px;
+}
+#form-comment {
+    margin: 0 auto;
+    width: 60%;
+    margin-bottom: 30px;
+}
+
+#form-comment label {
+    margin-right: 30px;
+}
+
+#form-comment input,textarea {
+    width: 80%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#form-comment #names {
+    margin-left: 20px;
+}
+
+#form-comment #youremail {
+    margin-left: 25px;
+}
+
+#form-comment button{
+    height: 38px;
+    background:#615CFD;
+    border: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+    
+    /* center the button */
+    margin: 0 auto;
+    display: block;
+}
+
+#form-comment button:hover {
+    background: #fff;
+    border: 1px solid #615CFD;
+    color: #615CFD;
+}
+
+
+
+
 
 /* Footer */
 .footer {
@@ -129,7 +189,6 @@ ul {
     width: 30px;
     height: 30px;
 }
-
 
 /* Media Queries */
 @media(max-width: 700px) {
@@ -181,7 +240,19 @@ ul {
     }
 
     #content {
+        width: 80%; 
+    }
+
+    #display-comments {
+        width: 80%;   
+    }
+
+    #form-comment {
         width: 80%;
+    }
+
+    #form-comment input,textarea {
+        width: 60%;
     }
     
     .footer {
@@ -214,11 +285,32 @@ ul {
         margin-left: 45px;
         margin-top: 15px;
     }
+
+    #form-comment label {
+        margin-right: 10px;
+    }
+
+    #form-comment input,textarea {
+        width: 60%;
+    }
     
     .footer .footer-nav {
         display: none;
     }
 }
+
+/* -----------comment form for Responsive and Iphone 5 Se-------- */
+@media only screen and (device-width: 320px) {
+
+    #form-comment label {
+        margin-right: 10px;
+    }
+
+    #form-comment input,textarea {
+        width: 60%;
+    }
+}
+
 /* ------------------------------- */
 
 /* Ipad */
@@ -277,6 +369,18 @@ ul {
         width: 80%;
     }
 
+    #display-comments {
+        width: 80%;   
+    }
+
+    #form-comment {
+        width: 80%;
+    }
+
+    #form-comment input,textarea {
+        width: 80%;
+    }
+
     .footer {
         display: block;
     }
@@ -298,6 +402,19 @@ ul {
 @media only screen and (device-width: 1024px) {
      
     #content {
+        width: 80%;
+        height: fit-content;
+    }
+
+    #display-comments {
+        width: 80%;   
+    }
+
+    #form-comment {
+        width: 80%;
+    }
+
+    #form-comment input,textarea {
         width: 80%;
     }
 

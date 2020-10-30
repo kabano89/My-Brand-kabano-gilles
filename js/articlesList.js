@@ -1,16 +1,11 @@
 var contentData = document.getElementById('data');
 
 var email_id = localStorage.getItem("myValue");
-// // alert("the value received is" + b);
-//var resetValue = 0;
-//localStorage.setItem("myValue", resetValue);
-
 
 document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
 
 document.getElementById("logout").onclick = function(){
-   //do something
-   
+
    window.location.href = "login.html";  
    logout();
    
@@ -19,9 +14,6 @@ document.getElementById("logout").onclick = function(){
 function logout(){
    firebase.auth().signOut();
 }
-
-
-
 
 function renderArticle(doc,n){ //the argument doc is the document that we want to render
 
@@ -66,21 +58,11 @@ function renderArticle(doc,n){ //the argument doc is the document that we want t
            
        })
 
-      //  db.collection('articles').doc('id').set({
-      //    title: 'html'
-      // })
-
-
        //upadte
        buttonUpdate.addEventListener('click', (e) => {
            //alert('hello')
-           let id = e.target.parentElement.getAttribute('data-id');
-         //   window.open('testupdate.html');
-         //   //alert(id);
-
-         //   var favoritemovie = id;
-         //   sessionStorage.setItem("favoriteMovie", favoritemovie);
-
+          let id = e.target.parentElement.getAttribute('data-id');
+        
           var a = id;
           localStorage.setItem('myValue',a);
           //window.location.href="testupdate.html";
@@ -103,11 +85,9 @@ db.collection('articles').orderBy('date_added', 'asc').onSnapshot(snapshot => {
  
              }else if (change.type == 'removed'){
                  let div = contentData.querySelector('[data-id=' + change.doc.id + ']');
-                 //console.log(div);
-                 contentData.removeChild(div);
-                 
 
-                 //div.parentNode.removeChild(div);
+                 contentData.removeChild(div);
+
             }
           });
 })

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="../css/singleblog.css">
+    <title>Single Blog page</title>
+</head>
+<body>
+    
+    <div class="menu-btn">
+      <i class="fas fa-bars fa-2x"></i>
+    </div>
+    <div class="container">
+          <nav class="main-nav">
+            <div id="logo">
+                <h1><a href="#">KABANO Gilles</a></h1>
+            </div>
+            <ul class="main-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="login.html" target="_blank">Login</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div id="content">
+              
+          </div>
+
+
+
+          <div id="display-comments">
+            <h3>Comments:</h3>
+              
+          </div>
+
+
+          <div id="form-comment">
+            <form id="post-comments" action="">
+                <h3>Leave a Reply</h3>
+
+                <p>
+                  <label for="names">Names:</label>
+                  <input type="text" id="names" name="names" placeholder="Enter your names" required>
+                </p>
+
+                <p>
+                  <label for="youremail">Email:</label>
+                  <input type="email" id="youremail" name="youremail" placeholder="Enter your Email" required>
+                </p>
+                    
+                <p>
+                  <label for="yourcomment">Comment:</label>
+                  <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Enter your comment here..."></textarea>
+                </p>
+          
+                <p>
+                    <button>Submit</button>
+                </p>
+          
+              </form>
+          </div>
+
+            <!-- Footer -->
+          <div class="footer">
+              <ul class="footer-nav">
+                  <li><a href="#skills">Skills</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#contact">Contact</a></li>
+              </ul>
+
+              <ul class="footer-social">
+                  <li><a href=""><img src="../img/IG.png" alt=""></a></li>
+                  <li><a href=""><img src="../img/fb.png" alt=""></a></li>
+                  <li><a href=""><img src="../img/twitter.png" alt=""></a></li>
+                  <li><a href=""><img src="../img/github.png" alt=""></a></li>
+              </ul>
+          </div>
+    </div>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAzB0xFc3J_JexCDPT4IhvIE7mk1mTSNCI",
+        authDomain: "blog-6e704.firebaseapp.com",
+        databaseURL: "https://blog-6e704.firebaseio.com",
+        projectId: "blog-6e704",
+        storageBucket: "blog-6e704.appspot.com",
+        messagingSenderId: "291237750331",
+        appId: "1:291237750331:web:a9854a771694c964d79e1e",
+        measurementId: "G-NT5XTB43ZB"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      //firebase.analytics();
+      const db = firebase.firestore();
+      //db.settings({timestampsInSnapshots: true});
+  </script>
+
+    <script src="../js/single-blog.js"></script>
+    <script>
+      document.querySelector('.menu-btn').addEventListener
+      ('click', () => document.querySelector('.main-menu').classList.toggle('show')
+
+      );
+    </script>
+    
+</body>
+</html>

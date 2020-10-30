@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    
-    <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/login.css">
+  <title>Login Page</title>
 </head>
 <body>
+    
+    <div class="container">
+                
+          <div id="form-comment">
 
-    <div id='login_div' class="main-div">
-        <h3 id="message"></h3>
-        <h3>Blog Login</h3>
-        <input type="email" placeholder="Email...." name="" id="email_field" />
-        <input type="password" placeholder="Password..." id="password_field"/>
+            <p id="message"></p>
 
-        <button onclick="signUp()" id="signUp">Sign Up</button>
+              <div id="login_div" action="">
+                <h3>Log In</h3>
 
-        <button onclick="login()" id="login">Login</button>
+                <p>
+                  <input type="email" placeholder="Email...." name="" id="email_field" />
+                </p>
+
+                <p>
+                  <input type="password" placeholder="Password..." id="password_field"/>
+                </p>
+                              
+                <p>
+                  <button onclick="login()" id="login">Login</button>
+                </p>
+          
+              </div>
+          </div>
+          
     </div>
 
-    <!-- <div id="message"> -->
-
-    </div>
-
-    <!-- <div id='user_div' class="loggedin-div">
-         <h3>Welcome User</h3>
-         <p id="user_para"></p>
-         <button onclick="logout()">Logout</button>
-    </div> -->
-
+    
 
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>

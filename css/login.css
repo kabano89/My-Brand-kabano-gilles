@@ -1,0 +1,148 @@
+.container{
+  margin: 0 auto;
+}
+
+/* form comments */
+#form-comment {
+  margin-left: 20%;
+  margin-top: 10%;
+  width: 50%;
+  background: blue;  
+}
+
+
+#form-comment h3{
+  margin-bottom: 30px;
+  margin-left: 25%;
+  padding-top: 5%;
+  color: #fff;
+}
+
+#form-comment p{
+
+}
+
+#form-comment input,textarea {
+  width: 40%;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 25%;
+}
+
+
+#form-comment button{
+  
+  border: 0;
+  background:#615CFD;
+  color: #ffffff;
+  
+  height: 38px;
+  width: 44%;
+  margin-left: 25%;
+  margin-bottom: 5%;
+}
+
+#form-comment button:hover {
+  background: #fff;
+  border: 1px solid #615CFD;
+  color: #615CFD;
+}
+
+
+/* Ipad */
+@media only screen and (device-width: 768px) {
+/* @media(max-width: 768px) { */
+
+  
+  #form-comment {
+      /* width: 80%; */
+      margin-top: 40%;
+      margin-left: 10%;
+      width: 80%;
+  }
+
+  #form-comment input,textarea {
+      /* width: 60%; */
+      width: 80%;
+      margin-left: 5%;
+      padding: 30px;
+  }
+
+  #form-comment h3{
+      margin-left: 40%; 
+  }
+
+
+}
+
+/* Ipad pro */
+@media only screen and (device-width: 1024px) {
+   
+
+  #form-comment {
+      /* width: 80%; */
+      margin-top: 40%;
+      margin-left: 10%;
+      width: 80%;
+  }
+
+  #form-comment input,textarea {
+      /* width: 60%; */
+      width: 80%;
+      margin-left: 5%;
+      padding: 30px;
+  }
+
+  #form-comment h3{
+      margin-left: 40%; 
+  }
+
+  
+}
+
+@media(max-width: 500px) {
+
+  #form-comment {
+      /* width: 80%; */
+      margin-top: 40%;
+      margin-left: 3%;
+      width: 90%;
+  }
+
+  #form-comment input,textarea {
+      /* width: 60%; */
+      width: 70%;
+      margin-left: 5%;
+      padding: 30px;
+  }
+
+  #form-comment h3{
+      margin-left: 40%; 
+  }
+
+}
+
+/* -----------Galaxy Fold-------- */
+@media only screen and (device-width: 280px) {
+
+  #form-comment {
+      /* width: 80%; */
+      margin-top: 40%;
+      margin-left: 0%;
+      width: 100%;
+  }
+
+  #form-comment input,textarea {
+      /* width: 60%; */
+      width: 70%;
+      margin-left: 3%;
+      padding: 30px;
+  }
+
+  #form-comment h3{
+      margin-left: 40%; 
+  }
+   
+}

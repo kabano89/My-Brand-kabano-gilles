@@ -1,12 +1,23 @@
-var contentData = document.getElementById("main-content");
+  var email_id = localStorage.getItem("myValue");
 
-function myfunc(){
-    
-    // let title = document.createElement('h3');
-    // title.textContent = 'hello';
-     contentData.style.backgroundColor = 'red';
+if(email_id == 0){
+    window.location.href = "login.html";
+}else{
 
-    //alert('hello');
-    
+   document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+
 }
 
+document.getElementById("logout").onclick = function(){
+   //do something
+   
+   logout();
+   window.location.href = "login.html";  
+   
+   
+}
+
+function logout(){
+   firebase.auth().signOut();
+   localStorage.clear();
+}

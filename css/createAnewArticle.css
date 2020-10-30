@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+  body {
+    font-family: "Inter", sans-serif;
+  }
+  
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 0.8fr;
+    grid-template-areas:
+      "nav nav nav nav"
+      "sidebar main main main"
+      "sidebar main main main"
+      "footer footer footer footer";
+
+    font-weight: 800;
+    
+    font-size: 16px;
+    color: #004d40;
+    /* text-align: center; */
+  }
+  
+  nav {
+    background: #007BFF;
+    grid-area: nav;
+    color: #fff;
+  }
+
+  nav p {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  main {
+    background: #fff;
+    grid-area: main;
+    /* text-align: center; */
+    padding-top: 30px;
+  }
+
+  main {
+    margin-left: 7%;
+  }
+
+  main h3 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  main form input,textarea {
+    width: 70%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+  main form #title {
+     margin-left: 85px;
+     margin-bottom: 5px;
+  }
+
+  main form #photo {
+    margin-left: 73px;
+    margin-bottom: 5px;
+ }
+
+ main form button{
+  height: 38px;
+  background:#007BFF;
+  border: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  
+  color: #ffffff;
+  margin-left: 200px;
+}
+
+
+  
+  #sidebar {
+    background: #001D38;
+    grid-area: sidebar;
+    
+  }
+
+  #sidebar ul {
+    margin: 30px 0px 0px 0px;
+    
+    
+  }
+
+  #sidebar ul li {
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+
+  #sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 18px;
+    display: block;
+    border-bottom: 1px solid #007BFF;
+  }
+
+  #sidebar ul li a:hover {
+     background: #007BFF;
+  }
+  
+  
+  
+  footer {
+    background: #001D38;
+    grid-area: footer;
+  }
+  
+  
+  @media only screen and (max-width: 550px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.4fr 0.4fr 2.2fr 1fr;
+      grid-template-areas:
+        "nav"
+        "sidebar"
+        "main"
+        "footer";
+    }
+  }
+  

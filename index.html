@@ -3,87 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <title>Landing Page</title>
 </head>
 <body>
+    <div class="menu-btn">
+        <i class="fas fa-bars fa-2x"></i>
+   </div>
+    <div class="container">
+                
+        <nav class="main-nav">
+            
+            <div id="logo">
+                <h1><a href="#">KABANO Gilles</a></h1>
+            </div>
 
-    <div class="wrapper">
-
-        <div class="menu" id="nav">
-            <ul>
-                <li><a href="#home">KABANO Gilles</a></li>
-                <li><a href="#home">Home</a></li>
+            <ul class="main-menu">
+                <li><a href="#">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="./html/blog.html">Blog</a></li>
+                <li><a href="./html/login.html" target="_blank">Login</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
+        </nav>
+        
+        <!-- profession -->
+        <div class="profession">
+            <h1>Hello, This Is Gilles</h1>
+            <h3>- Web Developer</h3>
         </div>
 
-        <div class="main" id="home">
-            <img src="./img/profile2.png" alt="">
-            <div id="description">
-                <h1>Hello, This Is Gilles</h1>
-                <h3>- Web developer</h3>
-            </div>
-        </div>
-
+        <!-- Services  -->
         <div class="services" id="services">
-            <div id="services-description">
+            <div id="description">
                 <h1>SERVICE PROVIDED</h1>
             </div>
-            <div id="content1">
-                <img src="./img/design.png" alt="">
-                <h3>Graphic Design</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, tempora.</p>
-            </div>
 
-            <div id="content2">
-                <img src="./img/webdesign.png" alt="">
-                <h3>Web Design</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, tempora.</p>
-            </div>
+            <div class="services-content">
+                <div>
+                    <img src="./img/design.png" alt="">
+                    <h3>Graphic Design</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sint eos voluptas laborum consequuntur reprehenderit quam consectetur. Laborum, voluptas quibusdam.</p>
+                </div>
 
-            <div id="content3">
-                <img src="./img/iphone.png" alt="">
-                <h3>Mobile App</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, tempora.</p>
+                <div>
+                    <img src="./img/webdesign.png" alt="">
+                    <h3>Web Design</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sint eos voluptas laborum consequuntur reprehenderit quam consectetur. Laborum, voluptas quibusdam.</p>
+                </div>
+
+                <div>
+                    <img src="./img/iphone.png" alt="">
+                    <h3>Mobile App</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sint eos voluptas laborum consequuntur reprehenderit quam consectetur. Laborum, voluptas quibusdam.</p>
+                </div>
+
+                <div>
+                    <img src="./img/cloud.png" alt="">
+                    <h3>Cloud Hosting</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sint eos voluptas laborum consequuntur reprehenderit quam consectetur. Laborum, voluptas quibusdam.</p>
+                </div>
+
             </div>
         </div>
 
-
+            <!-- Skills  -->
         <div class="skills" id="skills">
-            <div id="skills-description">
+            <div id="description">
                 <h1>My Skills</h1>
             </div>
-            <div id="skills1">
-                <img src="./img/html5.png" alt="">
+
+            <div class="skills-content">
+                <div>
+                    <img src="./img/html5.png" alt="">
+                </div>
+
+                <div>
+                    <img src="./img/CSS3.png" alt="">
+                </div>
+
+                <div>
+                    <img src="./img/js.png" alt="">
+                </div>
+
+                <div>
+                    <img src="./img/jquery.png" alt="">
+                </div>
+
             </div>
 
-            <div id="skills2">
-                <img src="./img/CSS3.png" alt="">
-            </div>
-
-            <div id="skills3">
-                <img src="./img/js-logo.png" alt="">
-            </div>
         </div>
 
-
+        <!-- Contact -->
         <div class="contact" id="contact">
-            <div id="form">
+
+            <div id="contact-form">
                 <h1>Get in Touch</h1>
                 <form action="">
-                    <textarea name="" id="" placeholder="Enter message"></textarea>
                     <input type="text" placeholder="Enter your name">
                     <input type="text" placeholder="Enter email address">
                     <input type="text" placeholder="Enter subject">
+                    <textarea name="" id="" placeholder="Enter message"></textarea>
                     <button>Send Message</button>
                 </form>
             </div>
 
             <div id="address">
-            
                 <img src="./img/home-adress.png" alt="">
                 <span>Kigali heights, Room 23</span><br>
                                          
@@ -91,34 +119,39 @@
                 <span>+250783977618</span><br>
                     
                 <img src="./img/email.png" alt=""> 
-                <span>info@gillesdev.com</span><br>
-                     
+                <span>info@gillesdev.com</span><br>  
             </div>
+
         </div>
-
-
+        
+        <!-- Footer -->
         <div class="footer">
+            <ul class="footer-nav">
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-            <div id="footer-nav">
-                <ul>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-
-            <div id="social-media">
-                <ul>
-                    <li><a href=""><img src="./img/IG.png" alt=""></a></li>
-                    <li><a href=""><img src="./img/fb.png" alt=""></a></li>
-                    <li><a href=""><img src="./img/twitter.png" alt=""></a></li>
-                    <li><a href=""><img src="./img/github.png" alt=""></a></li>
-                </ul>
-            </div>
-
+            <ul class="footer-social">
+                <li><a href=""><img src="./img/IG.png" alt=""></a></li>
+                <li><a href=""><img src="./img/fb.png" alt=""></a></li>
+                <li><a href=""><img src="./img/twitter.png" alt=""></a></li>
+                <li><a href=""><img src="./img/github.png" alt=""></a></li>
+            </ul>
         </div>
+        
 
     </div>
+
+    <script>
+        document.querySelector('.menu-btn').addEventListener
+        ('click', () => document.querySelector('.main-menu').classList.toggle('show')
+
+        );
+    </script>
+
+    
+    
     
 </body>
 </html>
